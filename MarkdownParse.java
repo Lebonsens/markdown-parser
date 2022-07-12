@@ -16,9 +16,14 @@ public class MarkdownParse {
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
+            if(closeParen == -1 || openBracket == -1|| openParen == -1 || closeBracket == -1|| currentIndex == -1){return toReturn;}
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
-            System.out.println("ha");
+            //System.out.println(currentIndex+" currentIndex");
+            //System.out.println(closeParen+" closeParen");
+            //System.out.println(openBracket+" openBracket" );
+            //System.out.println(closeBracket+" closeBracket");
+            
         }
 
         return toReturn;
