@@ -29,6 +29,10 @@ public class MarkdownParse {
             }
             
             if(markdown.charAt(closeBracket+1)!='('){toReturn.remove(toReturn.size()-1);};
+            //
+            //
+
+            //
         }
 
         return toReturn;
