@@ -52,7 +52,7 @@ public class MarkdownParseTest {
 
         ArrayList<String> res = MarkdownParse.getLinks(content);
 
-        List<String> ans = List.of("more text here");
+        List<String> ans = List.of();
         assertEquals(res,ans);
 
     }
@@ -78,7 +78,7 @@ public class MarkdownParseTest {
 
         ArrayList<String> res = MarkdownParse.getLinks(content);
 
-        List<String> ans = List.of("page.com");
+        List<String> ans = List.of();
         assertEquals(res,ans);
 
     }
@@ -91,7 +91,7 @@ public class MarkdownParseTest {
 
         ArrayList<String> res = MarkdownParse.getLinks(content);
 
-        List<String> ans = List.of("page.com");
+        List<String> ans = List.of("cool.com");
         assertEquals(res,ans);
 
     }
@@ -123,6 +123,16 @@ public class MarkdownParseTest {
         assertEquals(res,ans);
 
     }
+
+    @Test
+    public void mytest9() {
+        String contents = "[title]   (should-not-count.com)";
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks(contents), expect);
+    }
+
+
+
 
 }
 
